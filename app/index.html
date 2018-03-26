@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Care DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <link href="./stylesheets/global.css" rel="stylesheet" type="text/css" >
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Health Care DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .section {
+      margin: 20px;
+    }
+    button {
+      padding: 5px 16px;
+      border-radius: 4px;
+    }
+    button#changeQuota { background-color: yellow; }
+    button#buyTicket { background-color: #98fb98; }
+    button#refundTicket { background-color: pink; }
+    button#createWallet { background-color: #add8e6; }
+    #seed {color: green;}
+
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    tr:nth-child(odd) {
+      background-: #dddddd;
+    }
+ .im-centered {
+               margin: auto;
+               max-width: 70%;
+               min-height:200px;
+           }
+  </style>
+<link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet"> -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="./app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="text-center"><h1>Health Care DApp</h1></div>
+
+<div class="panel panel-primary im-centered" id="divlogin" >
+    <div class="panel-heading">
+        <h3 class="panel-title text-center">Sign in</h3>
+    </div>
+    <div class="panel-body">
+            
+                 
+                   <div class="form-group">
+                      <div class="row">
+                    <div class="control-label col-md-3">AC Address&nbsp;<span style="color:red;">*</span></div>
+                    <div class="col-md-6">
+                        <input type="text" id="txtaddress" class="form-control">
+                    </div></div>
+                     <div class="clearfix"></div>
+                </div>
+
+                 
+                    <div class="form-group">
+                        <div class="row">
+                    <div class="control-label col-md-3">Password&nbsp;<span style="color:red;">*</span></div>
+                    <div class="col-md-6">
+                        <input type="password" id="txtpass" class="form-control">
+                    </div>
+                     <div class="clearfix"></div>
+                </div></div>
+                 
+                    <div class="form-group">
+                        <div class="row">
+                    <div class="col-md-3">&nbsp;</div>
+                    <div class="col-md-4">
+                        <input type="button" value="Sign in"  id="btnlogin" class="btn btn-primary"  />
+                    </div>
+                     <div class="clearfix"></div>
+                </div>
+              </div>
+
+            </div>
+            </div>
+        
+      
+            <div class="panel panel-primary im-centered" id="divmain" >
+              <div class="panel-heading">
+                  <span id="patientContractAddress">Loding patient data .......</span>
+              </div>
+              <div class="panel-body">
+                  <div class="form-horizontal">
+                    
+                    <div class="form-group">
+                    <div class="row">
+                      <div class="control-label col-md-3">Name<span style="color:red;">*</span></div>
+                      <div class="col-md-6">
+                        <input type="text" id="patientName"  class="form-control">
+                      </div>
+                      <div class="col-md-2"> <button id="updatePatientName" class="btn btn-primary" >Update Name</button> </div>
+                       <div class="clearfix"></div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="row">
+                      <div class="control-label col-md-3">DOB<span style="color:red;">*</span></div>
+                      <div class="col-md-6">
+                        <input type="date" id="patientDOB"  class="form-control">
+                      </div>
+                      <div class="col-md-2"> <button id="updatePatientDOB" class="btn btn-primary" >Update DOB</button> </div>
+                       <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="control-label col-md-3">Gender<span style="color:red;">*</span></div>
+                      <div class="col-md-6">
+                        <input type="text" id="patientGender"  class="form-control">
+                      </div>
+                      <div class="col-md-2"> <button id="updatePatientGender" class="btn btn-primary" >Update Gender</button> </div>
+                       <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="control-label col-md-3">Condition<span style="color:red;">*</span></div>
+                      <div class="col-md-6">
+                        <select id="patientCondition" class="form-control">
+                          <option value="Diabetes">Diabetes</option>
+                          <option value="Asthma">Asthma</option>
+                          <option value="Cancer">Cancer</option>
+                        
+                        </select>
+                      </div>
+                      <div class="col-md-2"> <button id="updatePatientCondition" class="btn btn-primary" >Update Condition</button> </div>
+                       <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="control-label col-md-3"></div>
+                      
+                      <div class="col-md-2"> <button id="updatePatient" class="btn btn-primary" >Update Patient</button> </div>
+                       <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div>
+                      <span id="updatePatientResult"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <hr/>
+        
+                    <div class="col-md-12">
+                      <h2>Patient Change Log</h2>
+                      <br/>
+                      <br/>
+                      <table id="patientLog">
+                        <tr>
+                          <th>Event</th>
+                      <th>Name</th>
+                      <th>DOB</th>
+                      <th>Gender</th>
+                      <th>Conditions</th>
+                      <th>Block #</th>
+                    </tr>
+                    <table/>
+                  
+                    </div>
+                  </div>
+                  </div>
+
+                </div>
+              </div>
+                  
+                                    
+            </div>
+        </div>
+          <hr/>
+        
+        
+        
+        </body>
+        </html>
+                
